@@ -50,7 +50,7 @@ jobs:
       # deliberately.
       code-changed: ${{ steps.scope.outputs.code-changed }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
       - uses: ./.github/actions/setup-pnpm
@@ -90,7 +90,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - uses: ./.github/actions/setup-pnpm
       - uses: ./.github/actions/turbo-cache
       - run: pnpm install --frozen-lockfile
@@ -115,7 +115,7 @@ jobs:
         # so 20 is exercised by the compatibility job below instead.
         node-version: [22, 24]
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - uses: ./.github/actions/setup-pnpm
         with:
           node-version: ${{ matrix.node-version }}
@@ -141,7 +141,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - uses: ./.github/actions/setup-pnpm
       - uses: ./.github/actions/turbo-cache
         with:
@@ -215,7 +215,7 @@ jobs:
         # suite that would notice.
         os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - uses: ./.github/actions/setup-pnpm
       - uses: ./.github/actions/turbo-cache
         with:
@@ -236,7 +236,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - uses: ./.github/actions/setup-pnpm
       - uses: ./.github/actions/turbo-cache
       - run: pnpm install --frozen-lockfile
@@ -262,7 +262,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - uses: ./.github/actions/setup-pnpm
       - uses: ./.github/actions/turbo-cache
       - run: pnpm install --frozen-lockfile
@@ -288,7 +288,7 @@ jobs:
       # The action posts a single findings comment, edited in place.
       pull-requests: write
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
       - uses: ./.github/actions/setup-pnpm
@@ -313,7 +313,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
 
@@ -334,7 +334,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
       - uses: ./.github/actions/setup-pnpm
